@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>penyelesain sistem linier menggunakan sistem eliminasi gauss &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Sistem Linier';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSistem Linier.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Sistem Linier.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>penyelesain sistem linier menggunakan sistem eliminasi gauss</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>mengambar persamaan bidang dalam 3D</p>
+<ol class="arabic simple">
+<li><p>8x1 + x2</p></li>
+</ol>
+<section id="penyelesain-sistem-linier-menggunakan-sistem-eliminasi-gauss">
+<h1>penyelesain sistem linier menggunakan sistem eliminasi gauss<a class="headerlink" href="#penyelesain-sistem-linier-menggunakan-sistem-eliminasi-gauss" title="Link to this heading">#</a></h1>
+<p>pertama kita
+selesaikan solusi persamaan berikut!
+$<span class="math notranslate nohighlight">\(
+8x_1 + 9x_2 x_3 = 19\\
+x_1 + 2x_2 + 3x_3 = 9\\
+2x_1 +x_2+x_3 = 5\
+\)</span>$</p>
+<p>berikut penyelesaian perssamaan diatas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8  9  1 19]
+ [ 1  2  3  9]
+ [ 2  1  1  5]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>mendefinisikan fungsi operasi baris elimiasi gauss</p>
+<p>*rowswaap()
+*rowscale()
+*rowAdd</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowSwap will return duplicate array with rows</span>
+<span class="c1">#     k and l swapped.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowScale</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowScale will return duplicate array with the</span>
+<span class="c1">#     entries of row k multiplied by scale.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a numpy array.  RowAdd will return duplicate array with row</span>
+<span class="c1">#     l modifed.  The new values will be the old values of row l added to</span>
+<span class="c1">#     the values of row k, multiplied by scale.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>tahapan penyelessaian dengan mneggunakan eliminasi gauss</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## tukar baris 1 dengan baris 2</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1">##tambahkan kali-3 baris 0 dengan baris 1</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">A3</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">A5</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">A6</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">34</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">A8</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  2.  3.  9.]
+ [ 8.  9.  1. 19.]
+ [ 2.  1.  1.  5.]] 
+
+[[  1.   2.   3.   9.]
+ [  0.  -7. -23. -53.]
+ [  2.   1.   1.   5.]] 
+
+[[  1.   2.   3.   9.]
+ [  0.  -7. -23. -53.]
+ [  0.  -3.  -5. -13.]] 
+
+[[  1.   2.   3.   9.]
+ [  0.  -1. -13. -27.]
+ [  0.  -3.  -5. -13.]] 
+
+[[  1.   2.   3.   9.]
+ [ -0.   1.  13.  27.]
+ [  0.  -3.  -5. -13.]] 
+
+[[ 1.  2.  3.  9.]
+ [-0.  1. 13. 27.]
+ [ 0.  0. 34. 68.]] 
+
+[[ 1.  2.  3.  9.]
+ [-0.  1. 13. 27.]
+ [ 0.  0.  1.  2.]] 
+
+[[ 1.  2.  3.  9.]
+ [-0.  1.  1.  3.]
+ [ 0.  0.  1.  2.]] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>/content/drive/MyDrive/Alin/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-book in /usr/local/lib/python3.10/dist-packages (1.0.0)
+Requirement already satisfied: click&lt;9,&gt;=7.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (8.1.7)
+Requirement already satisfied: Jinja2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (3.1.3)
+Requirement already satisfied: jsonschema&lt;5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (4.19.2)
+Requirement already satisfied: linkify-it-py&lt;3,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.0.3)
+Requirement already satisfied: myst-nb&lt;3,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.0)
+Requirement already satisfied: myst-parser&lt;3,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.0.0)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (6.0.1)
+Requirement already satisfied: sphinx&lt;8,&gt;=5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (7.2.6)
+Requirement already satisfied: sphinx-comments in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.0.3)
+Requirement already satisfied: sphinx-copybutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.2)
+Requirement already satisfied: sphinx-external-toc&lt;2,&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.1)
+Requirement already satisfied: sphinx-jupyterbook-latex&lt;2,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.0)
+Requirement already satisfied: sphinx-design&lt;1,&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.0)
+Requirement already satisfied: sphinx-thebe&lt;1,&gt;=0.3 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.1)
+Requirement already satisfied: sphinx-book-theme&lt;2,&gt;=1.1.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.1.2)
+Requirement already satisfied: sphinx_togglebutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.2)
+Requirement already satisfied: sphinxcontrib-bibtex&lt;3,&gt;=2.5.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.6.2)
+Requirement already satisfied: sphinx-multitoc-numbering&lt;1,&gt;=0.1.3 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.1.3)
+Requirement already satisfied: attrs&gt;=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (23.2.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (2023.12.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.33.0)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.18.0)
+Requirement already satisfied: uc-micro-py in /usr/local/lib/python3.10/dist-packages (from linkify-it-py&lt;3,&gt;=2-&gt;jupyter-book) (1.0.3)
+Requirement already satisfied: importlib_metadata in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (7.0.1)
+Requirement already satisfied: ipython in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (7.34.0)
+Requirement already satisfied: jupyter-cache&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (1.0.0)
+Requirement already satisfied: nbclient in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.9.0)
+Requirement already satisfied: nbformat&gt;=5.0 in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.9.2)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.9.0)
+Requirement already satisfied: ipykernel in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.5.6)
+Requirement already satisfied: docutils&lt;0.21,&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.20.1)
+Requirement already satisfied: markdown-it-py~=3.0 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (3.0.0)
+Requirement already satisfied: mdit-py-plugins~=0.4 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.4.0)
+Requirement already satisfied: sphinxcontrib-applehelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.8)
+Requirement already satisfied: sphinxcontrib-devhelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.6)
+Requirement already satisfied: sphinxcontrib-jsmath in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.0.5)
+Requirement already satisfied: sphinxcontrib-serializinghtml&gt;=1.1.9 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.1.10)
+Requirement already satisfied: sphinxcontrib-qthelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.7)
+Requirement already satisfied: Pygments&gt;=2.14 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.16.1)
+Requirement already satisfied: snowballstemmer&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.2.0)
+Requirement already satisfied: babel&gt;=2.9 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.14.0)
+Requirement already satisfied: alabaster&lt;0.8,&gt;=0.7 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (0.7.16)
+Requirement already satisfied: imagesize&gt;=1.3 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.4.1)
+Requirement already satisfied: requests&gt;=2.25.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.31.0)
+Requirement already satisfied: packaging&gt;=21.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (23.2)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from Jinja2-&gt;jupyter-book) (2.1.5)
+Requirement already satisfied: pydata-sphinx-theme&gt;=0.14 in /usr/local/lib/python3.10/dist-packages (from sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (0.15.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pybtex&gt;=0.24 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (0.24.0)
+Requirement already satisfied: pybtex-docutils&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (1.0.3)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (67.7.2)
+Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (0.42.0)
+Requirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.0.27)
+Requirement already satisfied: tabulate in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.9.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py~=3.0-&gt;myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.1.2)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (6.1.12)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.7.1)
+Requirement already satisfied: traitlets&gt;=5.4 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.7.1)
+Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=5.0-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.19.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: latexcodec&gt;=1.0.4 in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (2.0.1)
+Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (1.16.0)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (4.12.3)
+Requirement already satisfied: accessible-pygments in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (0.0.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (3.6)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2024.2.2)
+Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib_metadata-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.17.0)
+Requirement already satisfied: ipython-genutils in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.0)
+Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (6.3.2)
+Requirement already satisfied: jedi&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.19.1)
+Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.4.2)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.0.43)
+Requirement already satisfied: backcall in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.0)
+Requirement already satisfied: matplotlib-inline in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.1.6)
+Requirement already satisfied: pexpect&gt;4.3 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /usr/local/lib/python3.10/dist-packages (from jedi&gt;=0.16-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.8.3)
+Requirement already satisfied: pyzmq&gt;=13 in /usr/local/lib/python3.10/dist-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (23.2.1)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.8.2)
+Requirement already satisfied: platformdirs&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.2.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from pexpect&gt;4.3-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.7.0)
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.10/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.13)
+Requirement already satisfied: greenlet!=0.4.17 in /usr/local/lib/python3.10/dist-packages (from sqlalchemy&lt;3,&gt;=1.3.12-&gt;jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.0.3)
+Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.10/dist-packages (from beautifulsoup4-&gt;pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (2.5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>selamat bertugas</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
