@@ -59,7 +59,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Sistem Linier';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SistemLinier';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -253,7 +253,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSistem Linier.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSistemLinier.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +283,7 @@
       
       
       
-      <li><a href="_sources/Sistem Linier.ipynb" target="_blank"
+      <li><a href="_sources/SistemLinier.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -412,8 +412,11 @@ x_1 + 2x_2 + 3x_3 = 9\\
 </div>
 <p>mendefinisikan fungsi operasi baris elimiasi gauss</p>
 <p>*rowswaap()
+menukar posisi baris
 *rowscale()
-*rowAdd</p>
+mengalikan suatu baris
+*rowAdd
+mengalikan suatu baris dan menambahkan hasilnya ke baris lainnya</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
@@ -531,115 +534,117 @@ x_1 + 2x_2 + 3x_3 = 9\\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">cd</span><span class="w"> </span>/content/drive/MyDrive/Alin/
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 3 -2 -3  5]
+ [ 1  1 -2  3]
+ [ 1 -1  1 -4]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="c1"># Membuat data untuk bidang</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Persamaan bidang</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot bidang</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Menandai titik potong</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Titik Potong&#39;</span><span class="p">)</span>
+
+<span class="c1"># Label sumbu</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyter-book in /usr/local/lib/python3.10/dist-packages (1.0.0)
-Requirement already satisfied: click&lt;9,&gt;=7.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (8.1.7)
-Requirement already satisfied: Jinja2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (3.1.3)
-Requirement already satisfied: jsonschema&lt;5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (4.19.2)
-Requirement already satisfied: linkify-it-py&lt;3,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.0.3)
-Requirement already satisfied: myst-nb&lt;3,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.0)
-Requirement already satisfied: myst-parser&lt;3,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.0.0)
-Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (6.0.1)
-Requirement already satisfied: sphinx&lt;8,&gt;=5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (7.2.6)
-Requirement already satisfied: sphinx-comments in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.0.3)
-Requirement already satisfied: sphinx-copybutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.2)
-Requirement already satisfied: sphinx-external-toc&lt;2,&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.1)
-Requirement already satisfied: sphinx-jupyterbook-latex&lt;2,&gt;=1 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.0.0)
-Requirement already satisfied: sphinx-design&lt;1,&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.5.0)
-Requirement already satisfied: sphinx-thebe&lt;1,&gt;=0.3 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.1)
-Requirement already satisfied: sphinx-book-theme&lt;2,&gt;=1.1.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (1.1.2)
-Requirement already satisfied: sphinx_togglebutton in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.3.2)
-Requirement already satisfied: sphinxcontrib-bibtex&lt;3,&gt;=2.5.0 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (2.6.2)
-Requirement already satisfied: sphinx-multitoc-numbering&lt;1,&gt;=0.1.3 in /usr/local/lib/python3.10/dist-packages (from jupyter-book) (0.1.3)
-Requirement already satisfied: attrs&gt;=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (23.2.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.33.0)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /usr/local/lib/python3.10/dist-packages (from jsonschema&lt;5-&gt;jupyter-book) (0.18.0)
-Requirement already satisfied: uc-micro-py in /usr/local/lib/python3.10/dist-packages (from linkify-it-py&lt;3,&gt;=2-&gt;jupyter-book) (1.0.3)
-Requirement already satisfied: importlib_metadata in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (7.0.1)
-Requirement already satisfied: ipython in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (7.34.0)
-Requirement already satisfied: jupyter-cache&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (1.0.0)
-Requirement already satisfied: nbclient in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.9.0)
-Requirement already satisfied: nbformat&gt;=5.0 in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.9.2)
-Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.9.0)
-Requirement already satisfied: ipykernel in /usr/local/lib/python3.10/dist-packages (from myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.5.6)
-Requirement already satisfied: docutils&lt;0.21,&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.20.1)
-Requirement already satisfied: markdown-it-py~=3.0 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (3.0.0)
-Requirement already satisfied: mdit-py-plugins~=0.4 in /usr/local/lib/python3.10/dist-packages (from myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.4.0)
-Requirement already satisfied: sphinxcontrib-applehelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.8)
-Requirement already satisfied: sphinxcontrib-devhelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.6)
-Requirement already satisfied: sphinxcontrib-jsmath in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.1)
-Requirement already satisfied: sphinxcontrib-htmlhelp&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.0.5)
-Requirement already satisfied: sphinxcontrib-serializinghtml&gt;=1.1.9 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.1.10)
-Requirement already satisfied: sphinxcontrib-qthelp in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.0.7)
-Requirement already satisfied: Pygments&gt;=2.14 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.16.1)
-Requirement already satisfied: snowballstemmer&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.2.0)
-Requirement already satisfied: babel&gt;=2.9 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.14.0)
-Requirement already satisfied: alabaster&lt;0.8,&gt;=0.7 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (0.7.16)
-Requirement already satisfied: imagesize&gt;=1.3 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (1.4.1)
-Requirement already satisfied: requests&gt;=2.25.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.31.0)
-Requirement already satisfied: packaging&gt;=21.0 in /usr/local/lib/python3.10/dist-packages (from sphinx&lt;8,&gt;=5-&gt;jupyter-book) (23.2)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from Jinja2-&gt;jupyter-book) (2.1.5)
-Requirement already satisfied: pydata-sphinx-theme&gt;=0.14 in /usr/local/lib/python3.10/dist-packages (from sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (0.15.2)
+<img alt="_images/e9332b5f3928e3814988cf2ed922eafa98ee3af3b2d125fb47f94880fbb53de5.png" src="_images/e9332b5f3928e3814988cf2ed922eafa98ee3af3b2d125fb47f94880fbb53de5.png" />
+</div>
+</div>
+<p>tugas membuat soal sendiri</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B1</span> <span class="o">=</span> <span class="n">RowSwap</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">B2</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">B3</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B3</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">B4</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B4</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">B5</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B5</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">B6</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">B5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B6</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">B7</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B7</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pybtex&gt;=0.24 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (0.24.0)
-Requirement already satisfied: pybtex-docutils&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (1.0.3)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (67.7.2)
-Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (from sphinx_togglebutton-&gt;jupyter-book) (0.42.0)
-Requirement already satisfied: sqlalchemy&lt;3,&gt;=1.3.12 in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.0.27)
-Requirement already satisfied: tabulate in /usr/local/lib/python3.10/dist-packages (from jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.9.0)
-Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py~=3.0-&gt;myst-parser&lt;3,&gt;=1-&gt;jupyter-book) (0.1.2)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (6.1.12)
-Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.7.1)
-Requirement already satisfied: traitlets&gt;=5.4 in /usr/local/lib/python3.10/dist-packages (from nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (5.7.1)
-Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=5.0-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.19.1)
-</pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: latexcodec&gt;=1.0.4 in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (2.0.1)
-Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from pybtex&gt;=0.24-&gt;sphinxcontrib-bibtex&lt;3,&gt;=2.5.0-&gt;jupyter-book) (1.16.0)
-Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (4.12.3)
-Requirement already satisfied: accessible-pygments in /usr/local/lib/python3.10/dist-packages (from pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (0.0.4)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (3.6)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2.0.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.25.0-&gt;sphinx&lt;8,&gt;=5-&gt;jupyter-book) (2024.2.2)
-Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib_metadata-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.17.0)
-Requirement already satisfied: ipython-genutils in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.0)
-Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipykernel-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (6.3.2)
-Requirement already satisfied: jedi&gt;=0.16 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.19.1)
-Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.4.2)
-Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.7.5)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.0.43)
-Requirement already satisfied: backcall in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.0)
-Requirement already satisfied: matplotlib-inline in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.1.6)
-Requirement already satisfied: pexpect&gt;4.3 in /usr/local/lib/python3.10/dist-packages (from ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /usr/local/lib/python3.10/dist-packages (from jedi&gt;=0.16-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.8.3)
-Requirement already satisfied: pyzmq&gt;=13 in /usr/local/lib/python3.10/dist-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (23.2.1)
-Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.10/dist-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (2.8.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbclient-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (4.2.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.10/dist-packages (from pexpect&gt;4.3-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.7.0)
-Requirement already satisfied: wcwidth in /usr/local/lib/python3.10/dist-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (0.2.13)
-Requirement already satisfied: greenlet!=0.4.17 in /usr/local/lib/python3.10/dist-packages (from sqlalchemy&lt;3,&gt;=1.3.12-&gt;jupyter-cache&gt;=0.5-&gt;myst-nb&lt;3,&gt;=1-&gt;jupyter-book) (3.0.3)
-Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.10/dist-packages (from beautifulsoup4-&gt;pydata-sphinx-theme&gt;=0.14-&gt;sphinx-book-theme&lt;2,&gt;=1.1.0-&gt;jupyter-book) (2.5)
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  1. -2.  3.]
+ [ 3. -2. -3.  5.]
+ [ 1. -1.  1. -4.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0. -5.  3. -4.]
+ [ 1. -1.  1. -4.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0. -5.  3. -4.]
+ [ 0. -2.  3. -7.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0.  1. -6. 17.]
+ [ 0. -2.  3. -7.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0.  1. -6. 17.]
+ [ 0.  0. -9. 27.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0.  1. -6. 17.]
+ [ 0.  0. -1.  3.]] 
+
+[[ 1.  1. -2.  3.]
+ [ 0.  1. -1.  2.]
+ [ 0.  0. -1.  3.]] 
 </pre></div>
 </div>
 </div>
 </div>
-<p>selamat bertugas</p>
 </section>
 
     <script type="text/x-thebe-config">
