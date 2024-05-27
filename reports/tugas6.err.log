@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Skalar untuk Skalasi
+scaling_factor = 2
+
+# Matriks Skalasi
+scaling_matrix = np.array([[scaling_factor, 0],
+                           [0, scaling_factor]])
+
+# Titik-titik persegi
+square_points = np.array([[0, 0],
+                          [1, 0],
+                          [1, 1],
+                          [0, 1]])
+
+# Titik-titik setelah Skalasi
+scaled_square = np.dot(square_points, scaling_matrix)
+
+# Visualisasi Skalasi Matriks
+plt.figure(figsize=(8, 8))
+plt.axhline(0, color='grey', linewidth=0.5)
+plt.axvline(0, color='grey', linewidth=0.5)
+plt.grid(True, which='both')
+
+plot_square(square_points, "Original Square", 'blue', 'O')
+plot_square(scaled_square, "Scaled Square (x2)", 'red', 'S')
+
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Skalasi Matriks (x2)')
+plt.legend()
+plt.axis('equal')
+plt.show()
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-1-8ba0ffaf8187>[0m in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;31m# Matriks Skalasi[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m scaling_matrix = np.array([[scaling_factor, 0],
+[0m[1;32m      6[0m                            [0, scaling_factor]])
+[1;32m      7[0m [0;34m[0m[0m
+
+[0;31mNameError[0m: name 'np' is not defined
+

@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sifat sifat matrik invers &#8212; welcome</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="determinan.html" />
+    <link rel="prev" title="aljabar matrik" href="tugas2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="welcome - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="welcome - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">penyelesain sistem linier menggunakan sistem eliminasi gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas2.html">aljabar matrik</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">sifat sifat matrik invers</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tugas6.html">rotasi matriks</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Tugas3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>sifat sifat matrik invers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">sifat sifat matrik invers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan">mencari invers dengan eliminasi gauss jordan</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>#tugas 3
+##matrik infers
+###sifat sifat matrik invers
+###mencari invers dengan eliminasi gauss jordan
+###solusi sistem persamaan linier  denan marik invers
+buat soal sistem persamaan linier 6 variabel</p>
+<p>####matrik invers</p>
+<p>Invers sendiri dapat diartikan sebagai lawan dari sesuatu (kebalikan). Jika suatu matriks memiliki invers, dapat dikatakan matriks tersebut adalah matriks nonsingular. Sebaliknya, jika suatu matriks tidak memiliki invers, maka matriks tersebut merupakan matriks singular.</p>
+<p>Invers matriks adalah sebuah kebalikan (invers) dari kedua matriks. Apabila matriks tersebut dikalikan akan menghasilkan matriks persegi (AB = BA = |). Simbol dari invers matriks adalah pangkat -1 dan terletak di atas hurufnya. Sebagai contoh, matriks B adalah invers matriks A sehingga ditulis B = A–1 dan matriks A adalah invers dari matriks B ditulis A = B-1. Matriks A dan B merupakan dua matriks yang saling invers (berkebalikan).</p>
+<section id="sifat-sifat-matrik-invers">
+<h1>sifat sifat matrik invers<a class="headerlink" href="#sifat-sifat-matrik-invers" title="Link to this heading">#</a></h1>
+<p>suatu matrik dapat dikatakan matriks invers dari suatu matrik adalah ketika matrik tersebut dikalikan dengan matrik invernya menghasilkan</p>
+<p>ika A adalah matriks kuadrat, dan jika kita dapat mencari matriks B sehingga AB = BA = I, maka A dikatakan dapat dibalik (invertible) dan B dinamakan invers (inverse) dari A.</p>
+<p>jika suatu matriks A memiliki invers (yaitu, A adalah matriks nonsingular), dan matriks B adalah inversnya, maka A dikalikan dengan B akan menghasilkan matriks identitas</p>
+</section>
+<section id="mencari-invers-dengan-eliminasi-gauss-jordan">
+<h1>mencari invers dengan eliminasi gauss jordan<a class="headerlink" href="#mencari-invers-dengan-eliminasi-gauss-jordan" title="Link to this heading">#</a></h1>
+<p>di sini saya akan mencari  ivers eliminasi gauss jordan</p>
+<p>menurut gauss jordan :</p>
+<p>(A|I)(A-1)</p>
+<p>Di mana A = Matriks</p>
+<p>I         = Matriks identitas</p>
+<p>A-1       =  Invers Matriks</p>
+<p>misalnya kita mau mencari invers dari sebuah matriks dengan ordo 3x3
+contoh :</p>
+<p>A
+\begin{bmatrix}
+1 &amp;2&amp; 3\
+0&amp; 1&amp; 4\
+5&amp; 6 &amp; 0
+\end{bmatrix}</p>
+<p>I
+\begin{bmatrix}
+1 &amp;0&amp; 0\
+0&amp; 1&amp; 0\
+0&amp; 0 &amp; 1
+\end{bmatrix}
+setelah itu kita gunakan eliminasi geuss jordan
+\begin{bmatrix}
+1 &amp;2&amp; 3|1&amp;0&amp;0\
+0&amp; 1&amp; 4|0&amp;1&amp;0\
+5&amp; 6 &amp; 0|0&amp;0&amp;1
+\end{bmatrix}
+untuk mencari invers,caranya matriks identitasnya bisa ada disebelah kiri, terserah baris berapa mau di tambahin/dikurangin/dikali/dibagi sama baris keberapa.penyelesaiannya:</p>
+<p>sekarang kurangkan baris ketiga dengan 5x baris pertama, maksud dari baris pertama dikalikan 5 dulu baru abis itu buat ngurangin baris ke tiga hasilnya :
+\begin{bmatrix}
+1 &amp;2&amp; 3|1&amp;0&amp;0\
+0&amp; 1&amp; 4|0&amp;1&amp;0\
+0&amp; -4&amp; -15|-5&amp;0&amp;1
+\end{bmatrix}
+dari matriks diatas,tambahkan baris ke tiga dengan 4 kali baris kedua. hasilnya :
+\begin{bmatrix}
+1 &amp;2&amp; 3|1&amp;0&amp;0\
+0&amp; 1&amp; 4|0&amp;1&amp;0\
+0&amp; 0&amp; 1|5&amp;4&amp;1
+\end{bmatrix}
+selanjutnya kurangkan baris kedua dengan 4x baris ketiga.
+dan kita kurangkan juga baris pertama dengan 3x baris ketiga. hasilnya:
+\begin{bmatrix}
+1 &amp;2&amp; 0|16&amp;-12&amp;-3\
+0&amp; 1&amp; 0|20&amp;-15&amp;-4\
+0&amp; 0&amp; 1|-5&amp;4&amp;1
+\end{bmatrix}
+langkah terakhir tinggal kurangkan baris pertama dengan 2x baris kedua.hasilnya :
+\begin{bmatrix}
+1 &amp;0&amp; 0|-24&amp;18&amp;5\
+0&amp; 1&amp; 0|20&amp;-15&amp;-4\
+0&amp; 0&amp; 1|-5&amp;4&amp;1
+\end{bmatrix}
+yang ada disebelah kanan adalah invers dari matrik A.
+jadi invers matriknya:</p>
+<p>A-1
+\begin{bmatrix}
+-24&amp;18&amp;5\
+20&amp;-15&amp;-4\
+-5&amp;4&amp;1
+\end{bmatrix}
+gauss jordan elimination juga bisa digunakan untuk mencari invers dari matriks dengan ordo yang lainnya. misalnya ordo 4x4, ordo 5x5, ordo 6x6, dan lain sebagainya.</p>
+<p>####solusi persammaan linier dengan matrik invers</p>
+<ol class="arabic">
+<li><p><strong>Sistem Persamaan Linear</strong>: Sistem persamaan linear adalah kumpulan persamaan linear yang melibatkan beberapa variabel. Solusi dari sistem persamaan linear adalah nilai-nilai variabel yang memenuhi semua persamaan dalam sistem tersebut.</p></li>
+<li><p><strong>Matriks Koefisien dan Vektor Hasil</strong>: Misalkan kita memiliki sistem persamaan linear dengan ( n ) persamaan dan ( n ) variabel. Matriks koefisien dari variabel-variabel ( x_1, x_2,…. x_n ) dapat kita susun menjadi matriks ( A ), dan vektor hasil dari persamaan-persamaan tersebut dapat kita susun menjadi vektor kolom ( B ).</p>
+<p>A =
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \
+a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+a_{n1} &amp; a_{n2} &amp; \ldots &amp; a_{nn} \
+\end{pmatrix}
+, \</p>
+<p>B =
+\begin{pmatrix}
+b_1 \
+b_2 \
+\vdots \
+b_n \
+\end{pmatrix}</p>
+</li>
+<li><p><strong>Matriks Invers</strong>: Solusi dari sistem persamaan linear dapat ditemukan dengan menggunakan matriks invers. Jika matriks koefisien ( A ) memiliki invers, kita dapat mengalikan inversnya dengan vektor ( B ):</p>
+<p>[ X = A-1.B]</p>
+<p>Di mana ( X ) adalah vektor kolom yang berisi solusi untuk setiap variabel.</p>
+</li>
+<li><p><strong>Ketersediaan Invers</strong>: tidak semua matriks memiliki invers. Matriks ( A ) harus merupakan matriks persegi (jumlah baris sama dengan jumlah kolom) dan determinannya tidak boleh nol untuk memiliki invers. Jika matriks ( A ) tidak memiliki invers, maka sistem persamaan linear tersebut mungkin memiliki tidak ada solusi atau memiliki banyak solusi.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowSwap will return duplicate array with rows</span>
+<span class="c1">#     k and l swapped.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowScale</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a NumPy array.  RowScale will return duplicate array with the</span>
+<span class="c1">#     entries of row k multiplied by scale.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+
+<span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1">#     A is a numpy array.  RowAdd will return duplicate array with row</span>
+<span class="c1">#     l modifed.  The new values will be the old values of row l added to</span>
+<span class="c1">#     the values of row k, multiplied by scale.</span>
+<span class="c1"># =============================================================================</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># m is number of rows in A</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># n is number of columns in A</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">B</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">scale</span>
+
+    <span class="k">return</span> <span class="n">B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x5</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x6</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">25</span><span class="p">],[</span><span class="mi">44</span><span class="p">],[</span><span class="mi">49</span><span class="p">],[</span><span class="mi">47</span><span class="p">]])</span>
+<span class="n">A</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># A=np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-e3ca6e297605&gt;</span> in <span class="ni">&lt;cell line: 12&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># A=np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;AB&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x5</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x6</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">25</span><span class="p">],[</span><span class="mi">44</span><span class="p">],[</span><span class="mi">49</span><span class="p">],[</span><span class="mi">47</span><span class="p">]])</span>
+<span class="n">AB</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">)):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">)):</span>
+          <span class="k">if</span> <span class="n">AB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> = RowAdd(A</span><span class="si">{</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">AB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">AB</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span>  <span class="p">:</span>
+      <span class="n">B</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> = RowScale(A</span><span class="si">{</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+      <span class="n">AB</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="n">index</span> <span class="o">+=</span><span class="mi">1</span>
+
+    <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">:</span>
+      <span class="n">B</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> = RowAdd(A</span><span class="si">{</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+      <span class="n">AB</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="n">index</span> <span class="o">+=</span><span class="mi">1</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">)):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+      <span class="n">B</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> = RowAdd(A</span><span class="si">{</span><span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="p">)</span>
+      <span class="n">AB</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">AB</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">AB</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="n">AB</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+      <span class="n">index</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">AB</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 3 4 2 3 1]
+ [1 2 3 4 3 2]
+ [2 1 0 5 2 3]
+ [2 4 3 1 5 3]
+ [2 4 4 3 5 1]
+ [1 3 4 3 2 4]]
+A1 = RowAdd(A0,1,0,1)
+A2 = RowScale(A1,0,1.0)
+A3 = RowAdd(A2,0,1,-1.0)
+A4 = RowScale(A3,1,-0.3333333333333333)
+A5 = RowAdd(A4,0,2,-2.0)
+A6 = RowAdd(A5,1,2,9.0)
+A7 = RowScale(A6,2,-0.5)
+A8 = RowAdd(A7,0,3,-2.0)
+A9 = RowAdd(A8,1,3,6.0)
+A10 = RowAdd(A9,2,3,3.0)
+A11 = RowScale(A10,3,-0.18181818181818182)
+A12 = RowAdd(A11,0,4,-2.0)
+A13 = RowAdd(A12,1,4,6.0)
+A14 = RowAdd(A13,2,4,2.0)
+A15 = RowAdd(A14,3,4,4.0)
+A16 = RowScale(A15,4,-2.75)
+A17 = RowAdd(A16,0,5,-1.0)
+A18 = RowAdd(A17,1,5,2.0)
+A19 = RowAdd(A18,2,5,0.3333333333333335)
+A20 = RowAdd(A19,3,5,1.5)
+A21 = RowAdd(A20,4,5,1.9696969696969697)
+A22 = RowScale(A21,5,0.07017543859649124)
+A23 = RowAdd(A22,1,0,-5.0)
+A24 = RowAdd(A23,2,0,-0.3333333333333339)
+A25 = RowAdd(A24,3,0,-2.5)
+A26 = RowAdd(A25,4,0,-1.0606060606060603)
+A27 = RowAdd(A26,5,0,5.749999999999997)
+A28 = RowAdd(A27,2,1,-1.3333333333333333)
+A29 = RowAdd(A28,3,1,-0.0)
+A30 = RowAdd(A29,4,1,-0.33333333333333337)
+A31 = RowAdd(A30,5,1,1.7500000000000002)
+A32 = RowAdd(A31,3,2,-0.5)
+A33 = RowAdd(A32,4,2,-0.5454545454545454)
+A34 = RowAdd(A33,5,2,3.499999999999999)
+A35 = RowAdd(A34,4,3,0.09090909090909091)
+A36 = RowAdd(A35,5,3,-0.75)
+A37 = RowAdd(A36,5,4,-6.249999999999999)
+[[ 1.  0.  0.  0.  0.  0.]
+ [ 0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [-0. -0. -0.  1.  0.  0.]
+ [-0. -0. -0. -0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]]
+[[2.]
+ [3.]
+ [5.]
+ [2.]
+ [1.]
+ [2.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A1</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A5</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A6</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A8</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A9</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A9</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A10</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A11</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A12</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A13</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A13</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A14</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A13</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A15</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A16</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A16</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A17</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A16</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A18</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A18</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A19</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A18</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A19</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A20</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A19</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A21</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A21</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A22</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A21</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A23</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A23</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A24</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">246</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A25</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A26</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A27</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A26</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A28</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.125</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A28</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A29</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A28</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">36.25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A29</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A30</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A29</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">5.375</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A31</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mf">3.625</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A31</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A32</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A31</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A32</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A33</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A32</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">1.125</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A33</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">AB</span><span class="nd">@A33</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  0.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+[[ 1.  0.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [-2.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+[[ 1.  0.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [-2.  0.  1.  0.  0.  0.]
+ [-2.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+[[ 1.  0.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [-2.  0.  1.  0.  0.  0.]
+ [-2.  0.  0.  1.  0.  0.]
+ [-2.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  1.]] 
+
+[[ 1.  0.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [-2.  0.  1.  0.  0.  0.]
+ [-2.  0.  0.  1.  0.  0.]
+ [-2.  0.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[-2.  3.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [-2.  0.  1.  0.  0.  0.]
+ [-2.  0.  0.  1.  0.  0.]
+ [-2.  0.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[-2.  3.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [ 3. -5.  1.  0.  0.  0.]
+ [-2.  0.  0.  1.  0.  0.]
+ [-2.  0.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[-2.  3.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [ 3. -5.  1.  0.  0.  0.]
+ [ 0. -2.  0.  1.  0.  0.]
+ [-2.  0.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[-2.  3.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [ 3. -5.  1.  0.  0.  0.]
+ [ 0. -2.  0.  1.  0.  0.]
+ [ 0. -2.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[-2.  3.  0.  0.  0.  0.]
+ [-1.  1.  0.  0.  0.  0.]
+ [ 3. -3.  1. -1.  0.  0.]
+ [ 0. -2.  0.  1.  0.  0.]
+ [ 0. -2.  0.  0.  1.  0.]
+ [-1.  0.  0.  0.  0.  1.]] 
+
+[[ -2.   3.   0.   0.   0.   0.]
+ [ -1.   1.   0.   0.   0.   0.]
+ [  3.  -3.   1.  -1.   0.   0.]
+ [  9. -11.   3.  -2.   0.   0.]
+ [  0.  -2.   0.   0.   1.   0.]
+ [ -1.   0.   0.   0.   0.   1.]] 
+
+[[ -2.   3.   0.   0.   0.   0.]
+ [ -1.   1.   0.   0.   0.   0.]
+ [  3.  -3.   1.  -1.   0.   0.]
+ [  9. -11.   3.  -2.   0.   0.]
+ [  6.  -8.   2.  -2.   1.   0.]
+ [ -1.   0.   0.   0.   0.   1.]] 
+
+[[ -5.   6.  -1.   1.   0.   0.]
+ [ -1.   1.   0.   0.   0.   0.]
+ [  3.  -3.   1.  -1.   0.   0.]
+ [  9. -11.   3.  -2.   0.   0.]
+ [  6.  -8.   2.  -2.   1.   0.]
+ [ -1.   0.   0.   0.   0.   1.]] 
+
+[[ -5.   6.  -1.   1.   0.   0.]
+ [  2.  -2.   1.  -1.   0.   0.]
+ [  3.  -3.   1.  -1.   0.   0.]
+ [  9. -11.   3.  -2.   0.   0.]
+ [  6.  -8.   2.  -2.   1.   0.]
+ [ -1.   0.   0.   0.   0.   1.]] 
+
+[[ -5.   6.  -1.   1.   0.   0.]
+ [  2.  -2.   1.  -1.   0.   0.]
+ [  3.  -3.   1.  -1.   0.   0.]
+ [ -5. -11.   3.  -2.   0.  14.]
+ [  6.  -8.   2.  -2.   1.   0.]
+ [ -1.   0.   0.   0.   0.   1.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [   2.   -2.    1.   -1.    0.    0.]
+ [   3.   -3.    1.   -1.    0.    0.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [   6.   -8.    2.   -2.    1.    0.]
+ [  -1.    0.    0.    0.    0.    1.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [   2.   -2.    1.   -1.    0.    0.]
+ [  -7.  -25.    7.   -5.    0.   28.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [   6.   -8.    2.   -2.    1.    0.]
+ [  -1.    0.    0.    0.    0.    1.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [   2.   -2.    1.   -1.    0.    0.]
+ [  -7.  -25.    7.   -5.    0.   28.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [ -39. -107.   29.  -20.    1.  126.]
+ [  -1.    0.    0.    0.    0.    1.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [   2.   -2.    1.   -1.    0.    0.]
+ [  -7.  -25.    7.   -5.    0.   28.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [ -39. -107.   29.  -20.    1.  126.]
+ [   4.   11.   -3.    2.    0.  -13.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [   2.   -2.    1.   -1.    0.    0.]
+ [  -7.  -25.    7.   -5.    0.   28.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [  -3.   -8.    2.   -2.    1.    9.]
+ [   4.   11.   -3.    2.    0.  -13.]] 
+
+[[  45.  116.  -31.   21.    0. -140.]
+ [  -2.    2.   -1.    1.   -0.   -0.]
+ [  -7.  -25.    7.   -5.    0.   28.]
+ [  -5.  -11.    3.   -2.    0.   14.]
+ [  -3.   -8.    2.   -2.    1.    9.]
+ [   4.   11.   -3.    2.    0.  -13.]] 
+
+[[ 4.500e+01  1.160e+02 -3.100e+01  2.100e+01  0.000e+00 -1.400e+02]
+ [-2.000e+00  2.000e+00 -1.000e+00  1.000e+00 -0.000e+00 -0.000e+00]
+ [-7.000e+00 -2.500e+01  7.000e+00 -5.000e+00  0.000e+00  2.800e+01]
+ [-5.000e+00 -1.100e+01  3.000e+00 -2.000e+00  0.000e+00  1.400e+01]
+ [ 1.875e-01  5.000e-01 -1.250e-01  1.250e-01 -6.250e-02 -5.625e-01]
+ [ 4.000e+00  1.100e+01 -3.000e+00  2.000e+00  0.000e+00 -1.300e+01]] 
+
+[[ 4.5000e+01  1.1600e+02 -3.1000e+01  2.1000e+01  0.0000e+00 -1.4000e+02]
+ [-2.0000e+00  2.0000e+00 -1.0000e+00  1.0000e+00 -0.0000e+00 -0.0000e+00]
+ [-7.0000e+00 -2.5000e+01  7.0000e+00 -5.0000e+00  0.0000e+00  2.8000e+01]
+ [-5.0000e+00 -1.1000e+01  3.0000e+00 -2.0000e+00  0.0000e+00  1.4000e+01]
+ [ 1.8750e-01  5.0000e-01 -1.2500e-01  1.2500e-01 -6.2500e-02 -5.6250e-01]
+ [-3.1250e-01 -5.0000e-01 -1.2500e-01 -8.7500e-01  1.4375e+00 -6.2500e-02]] 
+
+[[ -1.125   -7.      -0.25    -9.75    15.375   -1.625 ]
+ [ -2.       2.      -1.       1.      -0.      -0.    ]
+ [ -7.     -25.       7.      -5.       0.      28.    ]
+ [ -5.     -11.       3.      -2.       0.      14.    ]
+ [  0.1875   0.5     -0.125    0.125   -0.0625  -0.5625]
+ [ -0.3125  -0.5     -0.125   -0.875    1.4375  -0.0625]] 
+
+[[ -1.125   -7.      -0.25    -9.75    15.375   -1.625 ]
+ [ -2.5625   0.5     -0.625    0.625    0.1875   1.6875]
+ [ -7.     -25.       7.      -5.       0.      28.    ]
+ [ -5.     -11.       3.      -2.       0.      14.    ]
+ [  0.1875   0.5     -0.125    0.125   -0.0625  -0.5625]
+ [ -0.3125  -0.5     -0.125   -0.875    1.4375  -0.0625]] 
+
+[[ -1.125   -7.      -0.25    -9.75    15.375   -1.625 ]
+ [ -2.5625   0.5     -0.625    0.625    0.1875   1.6875]
+ [ -7.     -25.       7.      -5.       0.      28.    ]
+ [ -5.     -11.       3.      -2.       0.      14.    ]
+ [  0.1875   0.5     -0.125    0.125   -0.0625  -0.5625]
+ [ -0.3125  -0.5     -0.125   -0.875    1.4375  -0.0625]] 
+
+[[-1.125  -7.     -0.25   -9.75   15.375  -1.625 ]
+ [-2.5625  0.5    -0.625   0.625   0.1875  1.6875]
+ [ 2.5625  0.5     0.625   1.375  -3.1875 -0.6875]
+ [-0.5     1.      0.      1.     -1.5     0.5   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [-0.3125 -0.5    -0.125  -0.875   1.4375 -0.0625]] 
+
+[[-1.125  -7.     -0.25   -9.75   15.375  -1.625 ]
+ [-2.5625  0.5    -0.625   0.625   0.1875  1.6875]
+ [ 2.5625  0.5     0.625   1.375  -3.1875 -0.6875]
+ [-0.5     1.      0.      1.     -1.5     0.5   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [ 0.1     0.16    0.04    0.28   -0.46    0.02  ]] 
+
+[[ 2.5    -1.2     1.2     0.4    -1.3    -0.9   ]
+ [-2.5625  0.5    -0.625   0.625   0.1875  1.6875]
+ [ 2.5625  0.5     0.625   1.375  -3.1875 -0.6875]
+ [-0.5     1.      0.      1.     -1.5     0.5   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [ 0.1     0.16    0.04    0.28   -0.46    0.02  ]] 
+
+[[ 2.5    -1.2     1.2     0.4    -1.3    -0.9   ]
+ [-3.1    -0.36   -0.84   -0.88    2.66    1.58  ]
+ [ 2.5625  0.5     0.625   1.375  -3.1875 -0.6875]
+ [-0.5     1.      0.      1.     -1.5     0.5   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [ 0.1     0.16    0.04    0.28   -0.46    0.02  ]] 
+
+[[ 2.5    -1.2     1.2     0.4    -1.3    -0.9   ]
+ [-3.1    -0.36   -0.84   -0.88    2.66    1.58  ]
+ [ 2.2    -0.08    0.48    0.36   -1.52   -0.76  ]
+ [-0.5     1.      0.      1.     -1.5     0.5   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [ 0.1     0.16    0.04    0.28   -0.46    0.02  ]] 
+
+[[ 2.5    -1.2     1.2     0.4    -1.3    -0.9   ]
+ [-3.1    -0.36   -0.84   -0.88    2.66    1.58  ]
+ [ 2.2    -0.08    0.48    0.36   -1.52   -0.76  ]
+ [-1.      0.2    -0.2    -0.4     0.8     0.4   ]
+ [ 0.1875  0.5    -0.125   0.125  -0.0625 -0.5625]
+ [ 0.1     0.16    0.04    0.28   -0.46    0.02  ]] 
+
+[[ 2.5  -1.2   1.2   0.4  -1.3  -0.9 ]
+ [-3.1  -0.36 -0.84 -0.88  2.66  1.58]
+ [ 2.2  -0.08  0.48  0.36 -1.52 -0.76]
+ [-1.    0.2  -0.2  -0.4   0.8   0.4 ]
+ [ 0.3   0.68 -0.08  0.44 -0.58 -0.54]
+ [ 0.1   0.16  0.04  0.28 -0.46  0.02]] 
+
+[[ 3. -1.  1.  0. -1. -1.]
+ [-3. -0. -1. -1.  3.  2.]
+ [ 2. -0.  0.  0. -2. -1.]
+ [-1.  0. -0. -0.  1.  0.]
+ [ 0.  1. -0.  0. -1. -1.]
+ [ 0.  0.  0.  0. -0.  0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">40</span><span class="p">],[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">30</span><span class="p">],[</span><span class="mi">44</span><span class="p">],[</span><span class="mi">49</span><span class="p">],[</span><span class="mi">47</span><span class="p">]])</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A3</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A4</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A5</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A6</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A7</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A8</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A9</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A9</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A10</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A11</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A12</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A13</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A12</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A13</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A14</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A13</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A15</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A14</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A16</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A15</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A16</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A17</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A16</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A18</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A17</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A18</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A19</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A18</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A19</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A20</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A19</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A21</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A20</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A21</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A22</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A21</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A23</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A22</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A23</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A24</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A23</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">246</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A25</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A24</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A26</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A25</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A27</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A26</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A28</span> <span class="o">=</span> <span class="n">RowScale</span><span class="p">(</span><span class="n">A27</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.125</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A28</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A29</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A28</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">36.25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A29</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A30</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A29</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">5.375</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A31</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A30</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mf">3.625</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A31</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A32</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A31</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A32</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A33</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">A32</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">1.125</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A33</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[40.]
+ [-2.]
+ [30.]
+ [44.]
+ [49.]
+ [47.]] 
+
+[[ 40.]
+ [ -2.]
+ [-50.]
+ [ 44.]
+ [ 49.]
+ [ 47.]] 
+
+[[ 40.]
+ [ -2.]
+ [-50.]
+ [-36.]
+ [ 49.]
+ [ 47.]] 
+
+[[ 40.]
+ [ -2.]
+ [-50.]
+ [-36.]
+ [-31.]
+ [ 47.]] 
+
+[[ 40.]
+ [ -2.]
+ [-50.]
+ [-36.]
+ [-31.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [-50.]
+ [-36.]
+ [-31.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [-40.]
+ [-36.]
+ [-31.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [-40.]
+ [-32.]
+ [-31.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [-40.]
+ [-32.]
+ [-27.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [ -8.]
+ [-32.]
+ [-27.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [ -8.]
+ [-56.]
+ [-27.]
+ [  7.]] 
+
+[[ 34.]
+ [ -2.]
+ [ -8.]
+ [-56.]
+ [-43.]
+ [  7.]] 
+
+[[ 42.]
+ [ -2.]
+ [ -8.]
+ [-56.]
+ [-43.]
+ [  7.]] 
+
+[[ 42.]
+ [-10.]
+ [ -8.]
+ [-56.]
+ [-43.]
+ [  7.]] 
+
+[[ 42.]
+ [-10.]
+ [ -8.]
+ [ 42.]
+ [-43.]
+ [  7.]] 
+
+[[-378.]
+ [ -10.]
+ [  -8.]
+ [  42.]
+ [ -43.]
+ [   7.]] 
+
+[[-378.]
+ [ -10.]
+ [  76.]
+ [  42.]
+ [ -43.]
+ [   7.]] 
+
+[[-378.]
+ [ -10.]
+ [  76.]
+ [  42.]
+ [ 335.]
+ [   7.]] 
+
+[[-378.]
+ [ -10.]
+ [  76.]
+ [  42.]
+ [ 335.]
+ [ -35.]] 
+
+[[-378.]
+ [ -10.]
+ [  76.]
+ [  42.]
+ [  20.]
+ [ -35.]] 
+
+[[-378.]
+ [  10.]
+ [  76.]
+ [  42.]
+ [  20.]
+ [ -35.]] 
+
+[[-378.  ]
+ [  10.  ]
+ [  76.  ]
+ [  42.  ]
+ [  -1.25]
+ [ -35.  ]] 
+
+[[-378.  ]
+ [  10.  ]
+ [  76.  ]
+ [  42.  ]
+ [  -1.25]
+ [  -6.25]] 
+
+[[-70.5 ]
+ [ 10.  ]
+ [ 76.  ]
+ [ 42.  ]
+ [ -1.25]
+ [ -6.25]] 
+
+[[-70.5 ]
+ [ 13.75]
+ [ 76.  ]
+ [ 42.  ]
+ [ -1.25]
+ [ -6.25]] 
+
+[[-70.5 ]
+ [ 13.75]
+ [ 76.  ]
+ [ 42.  ]
+ [ -1.25]
+ [ -6.25]] 
+
+[[-70.5 ]
+ [ 13.75]
+ [ 12.25]
+ [ 12.  ]
+ [ -1.25]
+ [ -6.25]] 
+
+[[-70.5 ]
+ [ 13.75]
+ [ 12.25]
+ [ 12.  ]
+ [ -1.25]
+ [  2.  ]] 
+
+[[ 2.  ]
+ [13.75]
+ [12.25]
+ [12.  ]
+ [-1.25]
+ [ 2.  ]] 
+
+[[ 2.  ]
+ [ 3.  ]
+ [12.25]
+ [12.  ]
+ [-1.25]
+ [ 2.  ]] 
+
+[[ 2.  ]
+ [ 3.  ]
+ [ 5.  ]
+ [12.  ]
+ [-1.25]
+ [ 2.  ]] 
+
+[[ 2.  ]
+ [ 3.  ]
+ [ 5.  ]
+ [ 2.  ]
+ [-1.25]
+ [ 2.  ]] 
+
+[[2.]
+ [3.]
+ [5.]
+ [2.]
+ [1.]
+ [2.]] 
+
+[[2.]
+ [3.]
+ [5.]
+ [2.]
+ [1.]
+ [2.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">aljabar matrik</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="determinan.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">sifat sifat matrik invers</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan">mencari invers dengan eliminasi gauss jordan</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alhamdy Wahyu Alfiansyah
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
