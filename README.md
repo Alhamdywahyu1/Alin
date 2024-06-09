@@ -311,4 +311,4 @@ plt.ylabel('Y-axis')
 plt.title('Shear Matriks')
 plt.legend()
 plt.axis('equal')
-plt.show()
+plt.show()ini_test

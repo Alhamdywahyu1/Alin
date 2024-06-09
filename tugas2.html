@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="sifat sifat matrik invers" href="Tugas3.html" />
+    <link rel="next" title="matrik invers" href="Tugas3.html" />
     <link rel="prev" title="penyelesain sistem linier menggunakan sistem eliminasi gauss" href="SistemLinier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,7 +180,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">penyelesain sistem linier menggunakan sistem eliminasi gauss</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">aljabar matrik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tugas3.html">sifat sifat matrik invers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas3.html">matrik invers</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="determinan.html">determinan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">eigenvalue dan eigenvektor</a></li>
@@ -451,8 +450,8 @@ yang sama dengan matrik pertama dan jumlah kolom yang sama dengan matrik kedua</
 <p>Sifat asosiatif</p>
 <p>Pada sifat ini, berlaku (A × B) × C= A × (B × C)</p>
 <p>Sifat distributif</p>
-<p>Pada sifat ini, berlaku A × (B + C) = (A × B) + (A × C)
-###transpose matrik
+<p>Pada sifat ini, berlaku A × (B + C) = (A × B) + (A × C)</p>
+<p>###transpose matrik
 transpose matrik adalah matrik yang posisi baris dan kolomnya bertukar posisi</p>
 <p>transpose matriks biasanya ditandai dengan tanda pangkat t pada matriks tersebut</p>
 <p>transpose matriks memiliki sifat sifat:</p>
@@ -463,6 +462,7 @@ transpose matrik adalah matrik yang posisi baris dan kolomnya bertukar posisi</p
 <li><p>(KP)T = <a class="reference external" href="http://k.PT">k.PT</a>, di mana k = suatu konstanta</p></li>
 <li><p>(PQ)T = PTQT</p></li>
 </ol>
+<p>mmembuat program untuk mengalikan antara dua buah matriks</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -506,25 +506,6 @@ transpose matrik adalah matrik yang posisi baris dan kolomnya bertukar posisi</p
 </div>
 </div>
 </div>
-<p>matrik adalah</p>
-<p>contoh dibawah matik A dan matrik B</p>
-<p><span class="math notranslate nohighlight">\(\begin{align*}
-A=
-\begin{bmatrix}
-2&amp;-3&amp;4\\
-1&amp;0&amp;-7
-\end{bmatrix}
-&amp;&amp;
-B=
-\begin{bmatrix}
-6&amp;2&amp;-4\\
-3&amp;5&amp;2
-\end{bmatrix}
-\end{align*}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\begin{align*}
-\matrixentry{A+B}{ij}&amp;=\matrixentry{A}{ij}+\matrixentry{B}{ij}
-&amp;&amp;1\leq i\leq m,\,1\leq j\leq n
-\end{align*}\)</span></p>
 </section>
 </section>
 </section>
@@ -573,7 +554,7 @@ B=
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">sifat sifat matrik invers</p>
+        <p class="prev-next-title">matrik invers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
