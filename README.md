@@ -312,3 +312,4 @@ plt.title('Shear Matriks')
 plt.legend()
 plt.axis('equal')
 plt.show()ini_test
+ini_test
