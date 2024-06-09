@@ -388,61 +388,59 @@ document.write(`
 <p>A-1       =  Invers Matriks</p>
 <p>misalnya kita mau mencari invers dari sebuah matriks dengan ordo 3x3
 contoh :</p>
-<p>A  =</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1 2 3]
-
- [0 1 4]
- 
- [5 6 0]
-</pre></div>
-</div>
-<p>I
-\begin{bmatrix}
+<p>A</p>
+<p>\begin{bmatrix}
+1 &amp;2&amp; 3\
+0&amp; 1&amp; 4\
+5&amp; 6 &amp; 0
+\end{bmatrix}</p>
+<p>I</p>
+<p>\begin{bmatrix}
 1 &amp;0&amp; 0\
 0&amp; 1&amp; 0\
 0&amp; 0 &amp; 1
-\end{bmatrix}
-setelah itu kita gunakan eliminasi geuss jordan
-\begin{bmatrix}
+\end{bmatrix}</p>
+<p>setelah itu kita gunakan eliminasi geuss jordan</p>
+<p>\begin{bmatrix}
 1 &amp;2&amp; 3|1&amp;0&amp;0\
 0&amp; 1&amp; 4|0&amp;1&amp;0\
 5&amp; 6 &amp; 0|0&amp;0&amp;1
-\end{bmatrix}
-untuk mencari invers,caranya matriks identitasnya bisa ada disebelah kiri, terserah baris berapa mau di tambahin/dikurangin/dikali/dibagi sama baris keberapa.penyelesaiannya:</p>
-<p>sekarang kurangkan baris ketiga dengan 5x baris pertama, maksud dari baris pertama dikalikan 5 dulu baru abis itu buat ngurangin baris ke tiga hasilnya :
-\begin{bmatrix}
+\end{bmatrix}</p>
+<p>untuk mencari invers,caranya matriks identitasnya bisa ada disebelah kiri, terserah baris berapa mau di tambahin/dikurangin/dikali/dibagi sama baris keberapa.penyelesaiannya:</p>
+<p>sekarang kurangkan baris ketiga dengan 5x baris pertama, maksud dari baris pertama dikalikan 5 dulu baru abis itu buat ngurangin baris ke tiga hasilnya :</p>
+<p>\begin{bmatrix}
 1 &amp;2&amp; 3|1&amp;0&amp;0\
 0&amp; 1&amp; 4|0&amp;1&amp;0\
 0&amp; -4&amp; -15|-5&amp;0&amp;1
-\end{bmatrix}
-dari matriks diatas,tambahkan baris ke tiga dengan 4 kali baris kedua. hasilnya :
-\begin{bmatrix}
+\end{bmatrix}</p>
+<p>dari matriks diatas,tambahkan baris ke tiga dengan 4 kali baris kedua. hasilnya :</p>
+<p>\begin{bmatrix}
 1 &amp;2&amp; 3|1&amp;0&amp;0\
 0&amp; 1&amp; 4|0&amp;1&amp;0\
 0&amp; 0&amp; 1|5&amp;4&amp;1
-\end{bmatrix}
-selanjutnya kurangkan baris kedua dengan 4x baris ketiga.
-dan kita kurangkan juga baris pertama dengan 3x baris ketiga. hasilnya:
-\begin{bmatrix}
+\end{bmatrix}</p>
+<p>selanjutnya kurangkan baris kedua dengan 4x baris ketiga.
+dan kita kurangkan juga baris pertama dengan 3x baris ketiga. hasilnya:</p>
+<p>\begin{bmatrix}
 1 &amp;2&amp; 0|16&amp;-12&amp;-3\
 0&amp; 1&amp; 0|20&amp;-15&amp;-4\
 0&amp; 0&amp; 1|-5&amp;4&amp;1
-\end{bmatrix}
-langkah terakhir tinggal kurangkan baris pertama dengan 2x baris kedua.hasilnya :
-\begin{bmatrix}
+\end{bmatrix}</p>
+<p>langkah terakhir tinggal kurangkan baris pertama dengan 2x baris kedua.hasilnya :</p>
+<p>\begin{bmatrix}
 1 &amp;0&amp; 0|-24&amp;18&amp;5\
 0&amp; 1&amp; 0|20&amp;-15&amp;-4\
 0&amp; 0&amp; 1|-5&amp;4&amp;1
-\end{bmatrix}
-yang ada disebelah kanan adalah invers dari matrik A.
+\end{bmatrix}</p>
+<p>yang ada disebelah kanan adalah invers dari matrik A.
 jadi invers matriknya:</p>
 <p>A-1
 \begin{bmatrix}
 -24&amp;18&amp;5\
 20&amp;-15&amp;-4\
 -5&amp;4&amp;1
-\end{bmatrix}
-gauss jordan elimination juga bisa digunakan untuk mencari invers dari matriks dengan ordo yang lainnya. misalnya ordo 4x4, ordo 5x5, ordo 6x6, dan lain sebagainya.</p>
+\end{bmatrix}</p>
+<p>gauss jordan elimination juga bisa digunakan untuk mencari invers dari matriks dengan ordo yang lainnya. misalnya ordo 4x4, ordo 5x5, ordo 6x6, dan lain sebagainya.</p>
 <p>####solusi persammaan linier dengan matrik invers</p>
 <ol class="arabic">
 <li><p><strong>Sistem Persamaan Linear</strong>: Sistem persamaan linear adalah kumpulan persamaan linear yang melibatkan beberapa variabel. Solusi dari sistem persamaan linear adalah nilai-nilai variabel yang memenuhi semua persamaan dalam sistem tersebut.</p></li>
