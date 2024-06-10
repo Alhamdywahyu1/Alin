@@ -53,3 +53,14 @@ then the bibliography is inserted with:
 
 This is just a simple starter to get you started.
 You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+
+```
+latex
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & 1 & 4 \\
+5 & 6 & 0
+\end{bmatrix}
+```
+
+
