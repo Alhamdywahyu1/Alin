@@ -179,7 +179,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">penyelesain sistem linier menggunakan sistem eliminasi gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas2.html">aljabar matrik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tugas3.html">tugas 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas3.html">Matriks invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinan.html">determinan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">eigenvalue dan eigenvektor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas6.html">transformasi matriks linier</a></li>
@@ -332,7 +332,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-error-toleransi">cara menghitung error toleransi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">page rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-page-rank">algoritma page rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-error-toleransi">cara menghitung error toleransi</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -346,8 +352,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="aplikasi-kal">
 <h1>aplikasi KAL<a class="headerlink" href="#aplikasi-kal" title="Link to this heading">#</a></h1>
-<p>##page rank
-###algoritma page rank</p>
+<section id="page-rank">
+<h2>page rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h2>
+<section id="algoritma-page-rank">
+<h3>algoritma page rank<a class="headerlink" href="#algoritma-page-rank" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>caranya yag pertama buat V0 panjang matriksnya harus sama dengan matriks yang ingin dihitung angka nya bebas dengan syarat jika dijumlah harus sama dengan 1</p></li>
 <li><p>lakukan perulangan untuk mengalikan V0 dengan matriks A dan tarh hasil matriksnya di V1</p></li>
@@ -357,7 +365,7 @@ document.write(`
 <li><p>pada error dengan cara membuatt batasan perbedaan pada contoh ini batasannya 0,01 semakin kecil maka semakin mendekati kebenaran</p></li>
 </ul>
 <section id="cara-menghitung-error-toleransi">
-<h2>cara menghitung error toleransi<a class="headerlink" href="#cara-menghitung-error-toleransi" title="Link to this heading">#</a></h2>
+<h4>cara menghitung error toleransi<a class="headerlink" href="#cara-menghitung-error-toleransi" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>kurangi matris selanjutanya dengan matriks saat ini simpan hasilnya</p></li>
 <li><p>kuadratkan hasilnya dan kemudian total tammbahkan semuanya</p></li>
@@ -415,22 +423,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="nd">@B</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[16 30]
- [12 30]]
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -489,7 +483,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-error-toleransi">cara menghitung error toleransi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">page rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-page-rank">algoritma page rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-error-toleransi">cara menghitung error toleransi</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
