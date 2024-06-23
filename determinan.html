@@ -403,18 +403,6 @@ ccontohnya ada pada matriks A, J dan K dimana baris kedua matriks A dan J sama d
 <section id="id8">
 <h3>8<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>jika ada suatu matrik yang merupakan hasil perkalian matriks maka determin dari matrik hasil perkalian tersebut adalah perkalian kedua determinan matriks awal</p>
-<section id="menghitung-infers-matriks-dan-determinan">
-<h4>1 menghitung infers matriks dan determinan<a class="headerlink" href="#menghitung-infers-matriks-dan-determinan" title="Link to this heading">#</a></h4>
-<p>tugas nya invers matrik 5X5 menggunakan cofaktor matriks yang ditranspossekan
-caranya:</p>
-<ul class="simple">
-<li><p>cara determinan matriks utamanya</p></li>
-<li><p>cari kofaktor dari matrik tersebut dengan cara mencarinya per elemen atau 1 per satu</p></li>
-<li><p>baris 1 kolom 1 pada kofaktor di dapat dari (menghilangkan baris 1 dan kolom 1 dari matrik A dan kemudian mencari determinan dari matriks A yang telah baris 1 dan kolom 1 nya dibuang ) jadi baris 1 kolom 1 dari kofaktor matriks A adalah determinan dari matriks yang telah dibuang baris dan kolonya</p></li>
-<li><p>lakukan sampai semua kofaktor didapatkan 5 X 5 nya</p></li>
-<li><p>jika sudah transposekan</p></li>
-<li><p>dan kalikan tiap elemen pada transpose tersebut 1/determinan matriks A dan hasilnya adalah matriks invers</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing Numpy package</span>
@@ -518,6 +506,18 @@ L 8.0
 </div>
 </div>
 </div>
+<section id="menghitung-infers-matriks-dan-determinan">
+<h4>1 menghitung infers matriks dan determinan<a class="headerlink" href="#menghitung-infers-matriks-dan-determinan" title="Link to this heading">#</a></h4>
+<p>tugas nya invers matrik 5X5 menggunakan cofaktor matriks yang ditranspossekan
+caranya:</p>
+<ul class="simple">
+<li><p>cara determinan matriks utamanya</p></li>
+<li><p>cari kofaktor dari matrik tersebut dengan cara mencarinya per elemen atau 1 per satu</p></li>
+<li><p>baris 1 kolom 1 pada kofaktor di dapat dari (menghilangkan baris 1 dan kolom 1 dari matrik A dan kemudian mencari determinan dari matriks A yang telah baris 1 dan kolom 1 nya dibuang ) jadi baris 1 kolom 1 dari kofaktor matriks A adalah determinan dari matriks yang telah dibuang baris dan kolonya</p></li>
+<li><p>lakukan sampai semua kofaktor didapatkan 5 X 5 nya</p></li>
+<li><p>jika sudah transposekan</p></li>
+<li><p>dan kalikan tiap elemen pada transpose tersebut 1/determinan matriks A dan hasilnya adalah matriks invers</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
