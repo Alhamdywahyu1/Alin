@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas6';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -358,56 +360,16 @@ document.write(`
 <h3>Skalasi Matriks<a class="headerlink" href="#skalasi-matriks" title="Link to this heading">#</a></h3>
 <p>Skalasi matriks mengubah ukuran objek dengan faktor skalar tertentu pada sumbu x dan y.</p>
 <p><strong>Skalasi Matriks:</strong></p>
-<p>[
-S = \begin{bmatrix}
-sx &amp; 0 \
+<p>S =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+sx &amp; 0 \\
 0 &amp; sy
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>Jika faktor skalasi (sx) dan (sy) sama, maka objek diperbesar atau diperkecil secara proporsional.</p>
 <p>Pada contoh kode di bawah ini dengan nilai skalasi 2 ada perubahan matriks yaitu yang awalnya ada pada lokasi (1,1) berubah menjadi (2,2) dan (0,1) menjadi (0,2) yang berarti posisi akan berubah mengikuti nilai skalasi.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">def</span> <span class="nf">plot_square</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">label_prefix</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">label_prefix</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-
-<span class="c1"># Skalar untuk Skalasi</span>
-<span class="n">scaling_factor</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="c1"># Matriks Skalasi</span>
-<span class="n">scaling_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">scaling_factor</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">scaling_factor</span><span class="p">]])</span>
-
-<span class="c1"># Titik-titik persegi</span>
-<span class="n">square_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-
-<span class="c1"># Titik-titik setelah Skalasi</span>
-<span class="n">scaled_square</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">square_points</span><span class="p">,</span> <span class="n">scaling_matrix</span><span class="p">)</span>
-
-<span class="c1"># Visualisasi Skalasi Matriks</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-
-<span class="n">plot_square</span><span class="p">(</span><span class="n">square_points</span><span class="p">,</span> <span class="s2">&quot;Original Square&quot;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">)</span>
-<span class="n">plot_square</span><span class="p">(</span><span class="n">scaled_square</span><span class="p">,</span> <span class="s2">&quot;Scaled Square (x2)&quot;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X-axis&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y-axis&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Skalasi Matriks (x2)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -467,13 +429,15 @@ sx &amp; 0 \
 <h2>rotasi matriks<a class="headerlink" href="#rotasi-matriks" title="Link to this heading">#</a></h2>
 <p>Rotasi matriks memutar titik-titik dalam suatu ruang dengan sudut tertentu
 θ terhadap titik asal.</p>
-<p>Rotasi Matriks:</p>
-<p>[
-R θ  = \begin{bmatrix}
-\cos \theta  &amp; -\sin \theta \
-\sin \theta &amp; \cos \theta \
+<p>Rotasi Matriks:
+R θ  =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\cos \theta  &amp; -\sin \theta \\
+\sin \theta &amp; \cos \theta \\
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>pada contoh kode dibawah adalah contoh rottasi matriks 45 derajat
 dan perubahan yang terjadi adalah benntuk matriks berputar sesuai derajat yang telah ditentukan</p>
 <div class="cell docutils container">
@@ -524,19 +488,23 @@ dan perubahan yang terjadi adalah benntuk matriks berputar sesuai derajat yang t
 <p>Refleksi matriks mencerminkan titik-titik terhadap sumbu tertentu, seperti sumbu x atau sumbu y.</p>
 <p>Refleksi Matriks:</p>
 <p>Refleksi terhadap sumbu y:</p>
-<p>[
-Ry = \begin{bmatrix}
--1 &amp; 0 \
-0 &amp; 1 \
+<p>Ry =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; 1 \\
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>Refleksi terhadap sumbu x:</p>
-<p>[
-Rx = \begin{bmatrix}
-1 &amp; 0 \
-0 &amp; -1 \
+<p>Rx =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1 \\
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>pada contoh kode refleksi matrik pada sumbu y dibawah menunjukkan sebuah perubahan pada lokasi matriksnya yang awalnya 1,1 menjadi -1,1 dan 1,0 menjadi -1,0 yang berarti ketika refleksi matriks terhadap sumbu y maka lokasi dari koordinat x nya(angka koordinat pertama) akan berubah menjadi negatif atau positifnya</p>
 <p>dan untuk refleksi sumbu x memiliki konsep yanng sama hanya saja berbeda lokasi refleksi nya saja</p>
 <div class="cell docutils container">
@@ -580,19 +548,23 @@ Rx = \begin{bmatrix}
 Shear matriks menggeser satu sumbu objek dengan faktor tertentu tanpa mengubah sumbu lainnya.</p>
 <p>Shear Matriks:</p>
 <p>Shear terhadap sumbu x:</p>
-<p>[
-Sh_x = \begin{bmatrix}
-1 &amp; k_x \
-0 &amp; 1 \
+<p>Sh_x =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; k_x \\
+0 &amp; 1 \\
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>Shear terhadap sumbu y:</p>
-<p>[
-Sh_y = \begin{bmatrix}
-1 &amp; 0 \
-k_y &amp; 1 \
+<p>Sh_y =</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 0 \\
+k_y &amp; 1 \\
 \end{bmatrix}
-]</p>
+\end{split}\]</div>
 <p>contoh kode dibawah adalah contoh kode matriks shear terhadap sumbu X dan dapat dilihat pada salah satu elemennya yang awalnya 1,1 menjadi 1,2.5 dan 1,0 menjadi 1,1.5 tetapi 2 elemen lainnya tidak berubah</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

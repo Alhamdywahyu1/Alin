@@ -333,7 +333,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat">sifat sifat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat">sifat sifat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-infers-matriks-dan-determinan">1 menghitung infers matriks dan determinan</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -350,32 +362,46 @@ document.write(`
 <p>determinan dari suatu matriks hanyalah 1 elemen angka</p>
 <section id="sifat-sifat">
 <h2>sifat sifat<a class="headerlink" href="#sifat-sifat" title="Link to this heading">#</a></h2>
-<p>###1
-determinan dari matriks identitas adalah 1
+<section id="id1">
+<h3>1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>determinan dari matriks identitas adalah 1
 contohnya ada pada matrik Z dan Y sebagai matriks identitas yang determinannya adalah 1</p>
-<p>###2
-menukar/merubah baris akan merubah tanda pada determinan
+</section>
+<section id="id2">
+<h3>2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>menukar/merubah baris akan merubah tanda pada determinan
 contohnya ada pada matrik C dan D yang hasilnya adalah perubahan tanda pada determinannya yang sebelumnya negatif menjadi  ataupu sebaliknya</p>
-<p>###3
-jika di suatu matriks pada suatu baris/kolom merupakan kelipatan dari baris/kolom yang lain maka matriks itu punya determinan == 0
+</section>
+<section id="id3">
+<h3>3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>jika di suatu matriks pada suatu baris/kolom merupakan kelipatan dari baris/kolom yang lain maka matriks itu punya determinan == 0
 contoh ada pada matriks E dan F dimana di matrik E ada baris yang kelipatan lainnya dan di matrik
 dan di matrik F ada kolom yang merupakan kelipatan dari kolom lainnya</p>
-<p>###4
-jika suatu matrik adalah suatu kelipatan dari matriks lainnya cara menghitung determinanya adalah dengan menghitung
+</section>
+<section id="id4">
+<h3>4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>jika suatu matrik adalah suatu kelipatan dari matriks lainnya cara menghitung determinanya adalah dengan menghitung
 jumlah kelipatannya
 kemudian dipangkatkan dengan baris dan kolom sebagai pangkat dan hasilnya dikalikan dengan hasil determinan
 contohnya ada pada matriks D dan G yang kalau dituliskan maka:
 2^3*3 dimana 2 adalah kelipatan dari matriks G terhadap matrik D dan pangkat 3 adalah jumlah baris da kolom  dan dikali 3 adalah determinan dari Matrik D dan hasilnya adalah determinan matrik G</p>
-<p>###5
-jika suatu baris/kolom dikalikan dengan suatu konstanta tertentu maka hasilnya adalah konstanta dikalikan dengan determinan  matriks tersebut  contohnya ada pada matrik A, I dan B yang dimana matrik I adalah perkalian konstanta dengan suatu baris dan matrik B perkalian dengan konstanta dengan suatu kolom dan hasilnya adalah determinan A*konstanta</p>
-<p>###6
-jika sebuah matrik matriks memiliki baris yang sama maka hasil dari menambahkan baris lainnya  adalah matriks dengan determinannya = determinan matriks pertama + determinan matriks kedua
+</section>
+<section id="id5">
+<h3>5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>jika suatu baris/kolom dikalikan dengan suatu konstanta tertentu maka hasilnya adalah konstanta dikalikan dengan determinan  matriks tersebut  contohnya ada pada matrik A, I dan B yang dimana matrik I adalah perkalian konstanta dengan suatu baris dan matrik B perkalian dengan konstanta dengan suatu kolom dan hasilnya adalah determinan A*konstanta</p>
+</section>
+<section id="id6">
+<h3>6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>jika sebuah matrik matriks memiliki baris yang sama maka hasil dari menambahkan baris lainnya  adalah matriks dengan determinannya = determinan matriks pertama + determinan matriks kedua
 ccontohnya ada pada matriks A, J dan K dimana baris kedua matriks A dan J sama dan dengan menambahkan baris lainnya maka akan menghasilkan matrik K dengan determinannya = determinan A + determinan J</p>
-<p>###7
-jika ada suatu matrik segitiga atas maka determinannya adalah hasil perkalian dari diagonalnya seperti pada contoh matriks L</p>
+</section>
+<section id="id7">
+<h3>7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>jika ada suatu matrik segitiga atas maka determinannya adalah hasil perkalian dari diagonalnya seperti pada contoh matriks L</p>
 <p>###8
 jika ada suatu matrik yang merupakan hasil perkalian matriks maka determin dari matrik hasil perkalian tersebut adalah perkalian kedua determinan matriks awal</p>
-<p>####1 menghitung infers matriks dan determinan</p>
+<section id="menghitung-infers-matriks-dan-determinan">
+<h4>1 menghitung infers matriks dan determinan<a class="headerlink" href="#menghitung-infers-matriks-dan-determinan" title="Link to this heading">#</a></h4>
 <p>tugas nya invers matrik 5X5 menggunakan cofaktor matriks yang ditranspossekan
 caranya:</p>
 <ul class="simple">
@@ -574,6 +600,8 @@ matriks invers A adalah : [[-1.64285714  2.42857143  1.78571429 -0.07142857 -3. 
 </div>
 </section>
 </section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -639,7 +667,19 @@ matriks invers A adalah : [[-1.64285714  2.42857143  1.78571429 -0.07142857 -3. 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat">sifat sifat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat">sifat sifat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-infers-matriks-dan-determinan">1 menghitung infers matriks dan determinan</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

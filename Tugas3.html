@@ -342,6 +342,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-invers">matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">sifat sifat matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">mencari invers dengan eliminasi gauss jordan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persammaan-linier-dengan-matrik-invers">solusi persammaan linier dengan matrik invers</a></li>
 </ul>
 </li>
 </ul>
@@ -392,21 +393,23 @@ document.write(`
 <p>misalnya kita mau mencari invers dari sebuah matriks dengan ordo 3x3
 contoh :</p>
 <p>A</p>
-<p><span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1&amp;2&amp;3\\
 0&amp;1&amp;4\\
 5&amp;6&amp;0
 \end{bmatrix}
-\)</span></p>
+\end{split}\]</div>
 <p>I</p>
-<p><span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1&amp;0&amp; 0\\
 0&amp;1&amp;0\\
 0&amp;&amp;1\
 \end{bmatrix}
-\)</span></p>
+\end{split}\]</div>
 <p>setelah itu kita gunakan eliminasi geuss jordan</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -466,7 +469,9 @@ A-1
     \end{bmatrix}
 \end{split}\]</div>
 <p>gauss jordan elimination juga bisa digunakan untuk mencari invers dari matriks dengan ordo yang lainnya. misalnya ordo 4x4, ordo 5x5, ordo 6x6, dan lain sebagainya.</p>
-<p>####solusi persammaan linier dengan matrik invers</p>
+</section>
+<section id="solusi-persammaan-linier-dengan-matrik-invers">
+<h4>solusi persammaan linier dengan matrik invers<a class="headerlink" href="#solusi-persammaan-linier-dengan-matrik-invers" title="Link to this heading">#</a></h4>
 <ol class="arabic">
 <li><p><strong>Sistem Persamaan Linear</strong>: Sistem persamaan linear adalah kumpulan persamaan linear yang melibatkan beberapa variabel. Solusi dari sistem persamaan linear adalah nilai-nilai variabel yang memenuhi semua persamaan dalam sistem tersebut.</p></li>
 <li><p><strong>Matriks Koefisien dan Vektor Hasil</strong>: Misalkan kita memiliki sistem persamaan linear dengan ( n ) persamaan dan ( n ) variabel. Matriks koefisien dari variabel-variabel ( x_1, x_2,…. x_n ) dapat kita susun menjadi matriks ( A ), dan vektor hasil dari persamaan-persamaan tersebut dapat kita susun menjadi vektor kolom ( B ).</p>
@@ -1197,10 +1202,7 @@ A36 = RowAdd(A35,5,4,-7.127659574468081)
  [  76.]
  [  42.]
  [ 335.]
- [ -35.]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+ [ -35.]] 
 
 [[-378.]
  [ -10.]
@@ -1379,6 +1381,7 @@ A36 = RowAdd(A35,5,4,-7.127659574468081)
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-invers">matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">sifat sifat matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">mencari invers dengan eliminasi gauss jordan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persammaan-linier-dengan-matrik-invers">solusi persammaan linier dengan matrik invers</a></li>
 </ul>
 </li>
 </ul>
