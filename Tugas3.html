@@ -181,7 +181,6 @@
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">penyelesain sistem linier menggunakan sistem eliminasi gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas2.html">aljabar matrik</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matriks invers</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="determinan.html">determinan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">eigenvalue dan eigenvektor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas6.html">transformasi matriks linier</a></li>
@@ -334,36 +333,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks invers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-infers">matrik infers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matrik-invers">sifat sifat matrik invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan">mencari invers dengan eliminasi gauss jordan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-sistem-persamaan-linier-denan-marik-invers">solusi sistem persamaan linier  denan marik invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-invers">matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">sifat sifat matrik invers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan">Mencari Invers Matriks dengan Eliminasi Gauss-Jordan</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan">Mencari Invers Matriks dengan Eliminasi Gauss-Jordan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4:</a></li>
 </ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -398,16 +388,12 @@ document.write(`
 <p>ika A adalah matriks kuadrat, dan jika kita dapat mencari matriks B sehingga AB = BA = I, maka A dikatakan dapat dibalik (invertible) dan B dinamakan invers (inverse) dari A.</p>
 <p>jika suatu matriks A memiliki invers (yaitu, A adalah matriks nonsingular), dan matriks B adalah inversnya, maka A dikalikan dengan B akan menghasilkan matriks identitas</p>
 </section>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="mencari-invers-matriks-dengan-eliminasi-gauss-jordan">
-<h1>Mencari Invers Matriks dengan Eliminasi Gauss-Jordan<a class="headerlink" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan" title="Link to this heading">#</a></h1>
-<section id="pendahuluan">
-<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<section id="mencari-invers-matriks-dengan-eliminasi-gauss-jordan">
+<h4>Mencari Invers Matriks dengan Eliminasi Gauss-Jordan<a class="headerlink" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan" title="Link to this heading">#</a></h4>
+<p>#####Pendahuluan</p>
 <p>Metode Gauss-Jordan adalah salah satu cara untuk mencari invers dari sebuah matriks. Proses ini melibatkan penggunaan matriks identitas untuk menghasilkan matriks invers.</p>
 <section id="langkah-langkah">
-<h3>Langkah-langkah<a class="headerlink" href="#langkah-langkah" title="Link to this heading">#</a></h3>
+<h5>Langkah-langkah<a class="headerlink" href="#langkah-langkah" title="Link to this heading">#</a></h5>
 <ol class="arabic simple">
 <li><p>Gabungkan matriks ( A ) dengan matriks identitas ( I ) untuk membentuk matriks augmented ((A|I)).</p></li>
 <li><p>Gunakan operasi baris untuk mengubah matriks ( A ) menjadi matriks identitas ( I ).</p></li>
@@ -415,7 +401,7 @@ document.write(`
 </ol>
 </section>
 <section id="contoh">
-<h3>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h3>
+<h5>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h5>
 <p>Misalkan kita memiliki matriks ( A ) dengan ordo ( 3 \times 3 ):</p>
 <p>[ A = \begin{bmatrix}
 1 &amp; 2 &amp; 3 \
@@ -434,8 +420,9 @@ document.write(`
 0 &amp; 1 &amp; 4 &amp; | &amp; 0 &amp; 1 &amp; 0 \
 5 &amp; 6 &amp; 0 &amp; | &amp; 0 &amp; 0 &amp; 1
 \end{bmatrix} ]</p>
+</section>
 <section id="langkah-1">
-<h4>Langkah 1:<a class="headerlink" href="#langkah-1" title="Link to this heading">#</a></h4>
+<h5>Langkah 1:<a class="headerlink" href="#langkah-1" title="Link to this heading">#</a></h5>
 <p>Kurangkan baris ketiga dengan 5 kali baris pertama:</p>
 <p>[ \begin{bmatrix}
 1 &amp; 2 &amp; 3 &amp; | &amp; 1 &amp; 0 &amp; 0 \
@@ -444,7 +431,7 @@ document.write(`
 \end{bmatrix} ]</p>
 </section>
 <section id="langkah-2">
-<h4>Langkah 2:<a class="headerlink" href="#langkah-2" title="Link to this heading">#</a></h4>
+<h5>Langkah 2:<a class="headerlink" href="#langkah-2" title="Link to this heading">#</a></h5>
 <p>Tambahkan baris ketiga dengan 4 kali baris kedua:</p>
 <p>[ \begin{bmatrix}
 1 &amp; 2 &amp; 3 &amp; | &amp; 1 &amp; 0 &amp; 0 \
@@ -453,7 +440,7 @@ document.write(`
 \end{bmatrix} ]</p>
 </section>
 <section id="langkah-3">
-<h4>Langkah 3:<a class="headerlink" href="#langkah-3" title="Link to this heading">#</a></h4>
+<h5>Langkah 3:<a class="headerlink" href="#langkah-3" title="Link to this heading">#</a></h5>
 <p>Kurangkan baris kedua dengan 4 kali baris ketiga, dan kurangkan baris pertama dengan 3 kali baris ketiga:</p>
 <p>[ \begin{bmatrix}
 1 &amp; 2 &amp; 0 &amp; | &amp; 16 &amp; -12 &amp; -3 \
@@ -462,7 +449,7 @@ document.write(`
 \end{bmatrix} ]</p>
 </section>
 <section id="langkah-4">
-<h4>Langkah 4:<a class="headerlink" href="#langkah-4" title="Link to this heading">#</a></h4>
+<h5>Langkah 4:<a class="headerlink" href="#langkah-4" title="Link to this heading">#</a></h5>
 <p>Kurangkan baris pertama dengan 2 kali baris kedua:</p>
 <p>[ \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; | &amp; -24 &amp; 18 &amp; 5 \
@@ -476,9 +463,8 @@ document.write(`
 -5 &amp; 4 &amp; 1
 \end{bmatrix} ]</p>
 </section>
-</section>
 <section id="kesimpulan">
-<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
+<h5>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h5>
 <p>Metode eliminasi Gauss-Jordan dapat digunakan untuk mencari invers dari matriks dengan ordo berapa pun, seperti ordo ( 4 \times 4 ), ( 5 \times 5 ), dan seterusnya.</p>
 <p>####solusi persammaan linier dengan matrik invers</p>
 <ol class="arabic">
@@ -571,20 +557,6 @@ b_n \
 <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">38</span><span class="p">],[</span><span class="mi">25</span><span class="p">],[</span><span class="mi">44</span><span class="p">],[</span><span class="mi">49</span><span class="p">],[</span><span class="mi">47</span><span class="p">]])</span>
 <span class="n">A</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
 <span class="c1"># A=np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-2-e3ca6e297605&gt;</span> in <span class="ni">&lt;cell line: 12&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># A=np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;AB&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -641,55 +613,54 @@ b_n \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 3 4 2 3 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 1 4 2 3 1]
  [1 2 3 4 3 2]
  [2 1 0 5 2 3]
  [2 4 3 1 5 3]
  [2 4 4 3 5 1]
  [1 3 4 3 2 4]]
-A1 = RowAdd(A0,1,0,1)
-A2 = RowScale(A1,0,1.0)
-A3 = RowAdd(A2,0,1,-1.0)
-A4 = RowScale(A3,1,-0.3333333333333333)
-A5 = RowAdd(A4,0,2,-2.0)
-A6 = RowAdd(A5,1,2,9.0)
-A7 = RowScale(A6,2,-0.5)
-A8 = RowAdd(A7,0,3,-2.0)
-A9 = RowAdd(A8,1,3,6.0)
-A10 = RowAdd(A9,2,3,3.0)
-A11 = RowScale(A10,3,-0.18181818181818182)
-A12 = RowAdd(A11,0,4,-2.0)
-A13 = RowAdd(A12,1,4,6.0)
-A14 = RowAdd(A13,2,4,2.0)
-A15 = RowAdd(A14,3,4,4.0)
-A16 = RowScale(A15,4,-2.75)
-A17 = RowAdd(A16,0,5,-1.0)
-A18 = RowAdd(A17,1,5,2.0)
-A19 = RowAdd(A18,2,5,0.3333333333333335)
-A20 = RowAdd(A19,3,5,1.5)
-A21 = RowAdd(A20,4,5,1.9696969696969697)
-A22 = RowScale(A21,5,0.07017543859649124)
-A23 = RowAdd(A22,1,0,-5.0)
-A24 = RowAdd(A23,2,0,-0.3333333333333339)
-A25 = RowAdd(A24,3,0,-2.5)
-A26 = RowAdd(A25,4,0,-1.0606060606060603)
-A27 = RowAdd(A26,5,0,5.749999999999997)
-A28 = RowAdd(A27,2,1,-1.3333333333333333)
-A29 = RowAdd(A28,3,1,-0.0)
-A30 = RowAdd(A29,4,1,-0.33333333333333337)
-A31 = RowAdd(A30,5,1,1.7500000000000002)
-A32 = RowAdd(A31,3,2,-0.5)
-A33 = RowAdd(A32,4,2,-0.5454545454545454)
-A34 = RowAdd(A33,5,2,3.499999999999999)
-A35 = RowAdd(A34,4,3,0.09090909090909091)
-A36 = RowAdd(A35,5,3,-0.75)
-A37 = RowAdd(A36,5,4,-6.249999999999999)
-[[ 1.  0.  0.  0.  0.  0.]
- [ 0.  1.  0.  0.  0.  0.]
- [ 0.  0.  1.  0.  0.  0.]
- [-0. -0. -0.  1.  0.  0.]
+A1 = RowScale(A0,0,0.3333333333333333)
+A2 = RowAdd(A1,0,1,-1.0)
+A3 = RowScale(A2,1,0.6)
+A4 = RowAdd(A3,0,2,-2.0)
+A5 = RowAdd(A4,1,2,-0.33333333333333337)
+A6 = RowScale(A5,2,-0.3333333333333333)
+A7 = RowAdd(A6,0,3,-2.0)
+A8 = RowAdd(A7,1,3,-3.3333333333333335)
+A9 = RowAdd(A8,2,3,3.0)
+A10 = RowScale(A9,3,-0.1)
+A11 = RowAdd(A10,0,4,-2.0)
+A12 = RowAdd(A11,1,4,-3.3333333333333335)
+A13 = RowAdd(A12,2,4,2.0)
+A14 = RowAdd(A13,3,4,7.0)
+A15 = RowScale(A14,4,-3.1914893617021267)
+A16 = RowAdd(A15,0,5,-1.0)
+A17 = RowAdd(A16,1,5,-2.6666666666666665)
+A18 = RowAdd(A17,2,5,-4.440892098500626e-16)
+A19 = RowAdd(A18,3,5,2.999999999999999)
+A20 = RowAdd(A19,4,5,2.019999999999999)
+A21 = RowScale(A20,5,0.06135770234986951)
+A22 = RowAdd(A21,1,0,-0.3333333333333333)
+A23 = RowAdd(A22,2,0,-1.0)
+A24 = RowAdd(A23,3,0,-1.0)
+A25 = RowAdd(A24,4,0,-0.40666666666666673)
+A26 = RowAdd(A25,5,0,2.53191489361702)
+A27 = RowAdd(A26,2,1,-1.0)
+A28 = RowAdd(A27,3,1,-3.0)
+A29 = RowAdd(A28,4,1,-0.8866666666666666)
+A30 = RowAdd(A29,5,1,5.553191489361698)
+A31 = RowAdd(A30,3,2,1.0)
+A32 = RowAdd(A31,4,2,-0.1933333333333333)
+A33 = RowAdd(A32,5,2,1.7446808510638285)
+A34 = RowAdd(A33,4,3,-0.05999999999999999)
+A35 = RowAdd(A34,5,3,0.12765957446808474)
+A36 = RowAdd(A35,5,4,-7.127659574468081)
+[[ 1.  0.  0.  0. -0.  0.]
+ [ 0.  1.  0.  0. -0.  0.]
+ [ 0.  0.  1.  0. -0.  0.]
+ [ 0.  0.  0.  1.  0.  0.]
  [-0. -0. -0. -0.  1.  0.]
- [ 0.  0.  0.  0.  0.  1.]]
+ [ 0.  0.  0.  0. -0.  1.]]
 [[2.]
  [3.]
  [5.]
@@ -1005,7 +976,7 @@ A37 = RowAdd(A36,5,4,-6.249999999999999)
  [ 0.3   0.68 -0.08  0.44 -0.58 -0.54]
  [ 0.1   0.16  0.04  0.28 -0.46  0.02]] 
 
-[[ 3. -1.  1.  0. -1. -1.]
+[[ 2. -1.  1.  0. -1. -1.]
  [-3. -0. -1. -1.  3.  2.]
  [ 2. -0.  0.  0. -2. -1.]
  [-1.  0. -0. -0.  1.  0.]
@@ -1318,17 +1289,12 @@ A37 = RowAdd(A36,5,4,-6.249999999999999)
  [2.]
  [1.]
  [2.]] 
-
-[[2.]
- [3.]
- [5.]
- [2.]
- [1.]
- [2.]]
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+</section>
 </section>
 </section>
 </section>
@@ -1397,36 +1363,27 @@ A37 = RowAdd(A36,5,4,-6.249999999999999)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matriks invers</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-infers">matrik infers</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matrik-invers">sifat sifat matrik invers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-dengan-eliminasi-gauss-jordan">mencari invers dengan eliminasi gauss jordan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-sistem-persamaan-linier-denan-marik-invers">solusi sistem persamaan linier  denan marik invers</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-invers">matrik invers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">sifat sifat matrik invers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan">Mencari Invers Matriks dengan Eliminasi Gauss-Jordan</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4:</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-invers-matriks-dengan-eliminasi-gauss-jordan">Mencari Invers Matriks dengan Eliminasi Gauss-Jordan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-langkah</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4">Langkah 4:</a></li>
 </ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
