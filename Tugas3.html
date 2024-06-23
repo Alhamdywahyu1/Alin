@@ -392,25 +392,27 @@ document.write(`
 <p>misalnya kita mau mencari invers dari sebuah matriks dengan ordo 3x3
 contoh :</p>
 <p>A</p>
+<p>\begin{bmatrix}
+1&amp;2&amp;3\
+0&amp;1&amp;4\
+5&amp;6&amp;0
+\end{bmatrix}</p>
+<p>I</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
-1&amp;2&amp;3\\
-0&amp;1&amp;4\\
-5&amp;6&amp;0
+1&amp;0&amp; 0\\
+0&amp;1&amp;0\\
+0&amp;&amp;1\
 \end{bmatrix}
 \)</span></p>
-<p>I</p>
-<p>\begin{bmatrix}
-1&amp;0&amp; 0\
-0&amp;1&amp;0\
-0&amp;&amp;1
-\end{bmatrix}</p>
-<p>setelah itu kita gunakan eliminasi geuss jordan</p>
-<p>\begin{bmatrix}
-1 &amp;2&amp; 3|1&amp;0&amp;0\
-0&amp; 1&amp; 4|0&amp;1&amp;0\
-5&amp; 6 &amp; 0|0&amp;0&amp;1
-\end{bmatrix}</p>
+<p>setelah itu kita gunakan eliminasi geuss jordan
+$<span class="math notranslate nohighlight">\(
+ \begin{bmatrix}
+    1 &amp;2&amp; 3|1&amp;0&amp;0\\
+    0&amp; 1&amp; 4|0&amp;1&amp;0\\
+    5&amp; 6 &amp; 0|0&amp;0&amp;1
+    \end{bmatrix}
+\)</span>$</p>
 <p>untuk mencari invers,caranya matriks identitasnya bisa ada disebelah kiri, terserah baris berapa mau di tambahin/dikurangin/dikali/dibagi sama baris keberapa.penyelesaiannya:</p>
 <p>sekarang kurangkan baris ketiga dengan 5x baris pertama, maksud dari baris pertama dikalikan 5 dulu baru abis itu buat ngurangin baris ke tiga hasilnya :</p>
 <p>\begin{bmatrix}
