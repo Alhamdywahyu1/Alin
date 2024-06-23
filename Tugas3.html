@@ -392,11 +392,13 @@ document.write(`
 <p>misalnya kita mau mencari invers dari sebuah matriks dengan ordo 3x3
 contoh :</p>
 <p>A</p>
-<p>\begin{bmatrix}
-1&amp;2&amp;3\
-0&amp;1&amp;4\
+<p><span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1&amp;2&amp;3\\
+0&amp;1&amp;4\\
 5&amp;6&amp;0
-\end{bmatrix}</p>
+\end{bmatrix}
+\)</span></p>
 <p>I</p>
 <p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
@@ -405,69 +407,91 @@ contoh :</p>
 0&amp;&amp;1\
 \end{bmatrix}
 \)</span></p>
-<p>setelah itu kita gunakan eliminasi geuss jordan
-$<span class="math notranslate nohighlight">\(
+<p>setelah itu kita gunakan eliminasi geuss jordan</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
  \begin{bmatrix}
     1 &amp;2&amp; 3|1&amp;0&amp;0\\
     0&amp; 1&amp; 4|0&amp;1&amp;0\\
     5&amp; 6 &amp; 0|0&amp;0&amp;1
     \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <p>untuk mencari invers,caranya matriks identitasnya bisa ada disebelah kiri, terserah baris berapa mau di tambahin/dikurangin/dikali/dibagi sama baris keberapa.penyelesaiannya:</p>
 <p>sekarang kurangkan baris ketiga dengan 5x baris pertama, maksud dari baris pertama dikalikan 5 dulu baru abis itu buat ngurangin baris ke tiga hasilnya :</p>
-<p>\begin{bmatrix}
-1 &amp;2&amp; 3|1&amp;0&amp;0\
-0&amp; 1&amp; 4|0&amp;1&amp;0\
-0&amp; -4&amp; -15|-5&amp;0&amp;1
-\end{bmatrix}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \begin{bmatrix}
+    1 &amp;2&amp; 3|1&amp;0&amp;0\\
+    0&amp; 1&amp; 4|0&amp;1&amp;0\\
+    0&amp; -4&amp; -15|-5&amp;0&amp;1
+    \end{bmatrix}
+\end{split}\]</div>
 <p>dari matriks diatas,tambahkan baris ke tiga dengan 4 kali baris kedua. hasilnya :</p>
-<p>\begin{bmatrix}
-1 &amp;2&amp; 3|1&amp;0&amp;0\
-0&amp; 1&amp; 4|0&amp;1&amp;0\
-0&amp; 0&amp; 1|5&amp;4&amp;1
-\end{bmatrix}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    1 &amp;2&amp; 3|1&amp;0&amp;0\\
+    0&amp; 1&amp; 4|0&amp;1&amp;0\\
+    0&amp; 0&amp; 1|5&amp;4&amp;1
+    \end{bmatrix}
+\end{split}\]</div>
 <p>selanjutnya kurangkan baris kedua dengan 4x baris ketiga.
 dan kita kurangkan juga baris pertama dengan 3x baris ketiga. hasilnya:</p>
-<p>\begin{bmatrix}
-1 &amp;2&amp; 0|16&amp;-12&amp;-3\
-0&amp; 1&amp; 0|20&amp;-15&amp;-4\
-0&amp; 0&amp; 1|-5&amp;4&amp;1
-\end{bmatrix}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    1 &amp;2&amp; 0|16&amp;-12&amp;-3\\
+    0&amp; 1&amp; 0|20&amp;-15&amp;-4\\
+    0&amp; 0&amp; 1|-5&amp;4&amp;1
+    \end{bmatrix}
+\end{split}\]</div>
 <p>langkah terakhir tinggal kurangkan baris pertama dengan 2x baris kedua.hasilnya :</p>
-<p>\begin{bmatrix}
-1 &amp;0&amp; 0|-24&amp;18&amp;5\
-0&amp; 1&amp; 0|20&amp;-15&amp;-4\
-0&amp; 0&amp; 1|-5&amp;4&amp;1
-\end{bmatrix}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    1 &amp;0&amp; 0|-24&amp;18&amp;5\\
+    0&amp; 1&amp; 0|20&amp;-15&amp;-4\\
+    0&amp; 0&amp; 1|-5&amp;4&amp;1
+    \end{bmatrix}
+\end{split}\]</div>
 <p>yang ada disebelah kanan adalah invers dari matrik A.
 jadi invers matriknya:</p>
-<p>A-1
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A-1
 \begin{bmatrix}
--24&amp;18&amp;5\
-20&amp;-15&amp;-4\
--5&amp;4&amp;1
-\end{bmatrix}</p>
+    -24&amp;18&amp;5\\
+    20&amp;-15&amp;-4\\
+    -5&amp;4&amp;1
+    \end{bmatrix}
+\end{split}\]</div>
 <p>gauss jordan elimination juga bisa digunakan untuk mencari invers dari matriks dengan ordo yang lainnya. misalnya ordo 4x4, ordo 5x5, ordo 6x6, dan lain sebagainya.</p>
 <p>####solusi persammaan linier dengan matrik invers</p>
 <ol class="arabic">
 <li><p><strong>Sistem Persamaan Linear</strong>: Sistem persamaan linear adalah kumpulan persamaan linear yang melibatkan beberapa variabel. Solusi dari sistem persamaan linear adalah nilai-nilai variabel yang memenuhi semua persamaan dalam sistem tersebut.</p></li>
 <li><p><strong>Matriks Koefisien dan Vektor Hasil</strong>: Misalkan kita memiliki sistem persamaan linear dengan ( n ) persamaan dan ( n ) variabel. Matriks koefisien dari variabel-variabel ( x_1, x_2,…. x_n ) dapat kita susun menjadi matriks ( A ), dan vektor hasil dari persamaan-persamaan tersebut dapat kita susun menjadi vektor kolom ( B ).</p>
-<p>A =
-\begin{pmatrix}
-a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \
-a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
-a_{n1} &amp; a_{n2} &amp; \ldots &amp; a_{nn} \
-\end{pmatrix}
-, \</p>
-<p>B =
-\begin{pmatrix}
-b_1 \
-b_2 \
-\vdots \
-b_n \
-\end{pmatrix}</p>
+<p>A =</p>
 </li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \begin{pmatrix}
+   a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\
+   a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\
+   \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+   a_{n1} &amp; a_{n2} &amp; \ldots &amp; a_{nn} \\
+   \end{pmatrix}
+   , \
+   
+   B =
+   \begin{pmatrix}
+   b_1 \\
+   b_2 \\
+   \vdots \\
+   b_n \\
+   \end{pmatrix}
+\end{split}\]</div>
+<ol class="arabic" start="3">
 <li><p><strong>Matriks Invers</strong>: Solusi dari sistem persamaan linear dapat ditemukan dengan menggunakan matriks invers. Jika matriks koefisien ( A ) memiliki invers, kita dapat mengalikan inversnya dengan vektor ( B ):</p>
 <p>[ X = A-1.B]</p>
 <p>Di mana ( X ) adalah vektor kolom yang berisi solusi untuk setiap variabel.</p>
@@ -1173,7 +1197,10 @@ A36 = RowAdd(A35,5,4,-7.127659574468081)
  [  76.]
  [  42.]
  [ 335.]
- [ -35.]] 
+ [ -35.]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 
 [[-378.]
  [ -10.]
